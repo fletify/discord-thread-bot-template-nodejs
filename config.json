@@ -1,0 +1,9 @@
+{
+    "token": "OTQ1MDE1MDA3NjUxOTc1MjI4.YhJ_zw.vLVlTH6WaudtT6tDtdgO4kEwRw8",
+    "prefix": "!",
+    "mongooseConnectionString": "",
+    "inviteURL": "https://discord.com/api/oauth2/authorize?client_id=945015007651975228&permissions=8&scope=bot%20applications.commands",
+    "tick": "✅",
+    "cross": "🚫",
+    "color": "#008D5A"
+}
