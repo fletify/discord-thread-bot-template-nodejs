@@ -41,10 +41,7 @@ module.exports = async (client) => {
         arrayOfSlashCommands.push(file);
     });
     client.on("ready", async () => {
-        await client.guilds.cache
-            .get("942128689368399933")
-            .commands.set(arrayOfSlashCommands);
-        // await client.application.commands.set(arrayOfSlashCommands);
+        await client.application.commands.set(arrayOfSlashCommands);
     });
     const { mongooseConnectionString } = require('../config.json')
     if (!mongooseConnectionString) return;

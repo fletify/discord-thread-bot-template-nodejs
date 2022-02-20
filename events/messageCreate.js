@@ -1,4 +1,4 @@
-const client = require("../index");
+/*const client = require("../index");
 
 client.on("messageCreate", async (message) => {
     if (
@@ -7,6 +7,8 @@ client.on("messageCreate", async (message) => {
         !message.content.toLowerCase().startsWith(client.config.prefix)
     )
         return;
+
+    return;
 
     const [cmd, ...args] = message.content
         .slice(client.config.prefix.length)
@@ -17,4 +19,4 @@ client.on("messageCreate", async (message) => {
 
     if (!command) return;
     await command.run(client, message, args);
-});
+});*/
