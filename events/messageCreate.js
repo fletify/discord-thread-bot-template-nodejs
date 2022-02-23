@@ -1,22 +1,23 @@
-/*const client = require("../index");
+const client = require("../index");
 
 client.on("messageCreate", async (message) => {
-    if (
-        message.author.bot ||
-        !message.guild ||
-        !message.content.toLowerCase().startsWith(client.config.prefix)
-    )
-        return;
+  if (
+    message.author.bot ||
+    !message.guild ||
+    !message.content.toLowerCase().startsWith(client.config.prefix)
+  ) return;
 
-    return;
+  const [cmd, ...args] = message.content
+    .slice(client.config.prefix.length)
+    .trim()
+    .split(/ +/g);
 
-    const [cmd, ...args] = message.content
-        .slice(client.config.prefix.length)
-        .trim()
-        .split(/ +/g);
+  const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases ?.includes(cmd.toLowerCase()));
 
-    const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases?.includes(cmd.toLowerCase()));
-
-    if (!command) return;
+  if (!command) return;
+  try {
     await command.run(client, message, args);
-});*/
+  } catch (error) {
+    return message.reply(`${client.config.error} | There was an error while parsing the command request. Try again after a few minutes.`);
+  }
+});

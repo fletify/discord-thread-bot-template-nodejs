@@ -1,19 +1,39 @@
 {
-    "name": "djs",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start": "node index.js",
-        "test": "nodemon index.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "discord.js": "^13.6.0",
-        "glob": "^7.2.0",
-        "mongoose": "^6.2.2",
-        "util": "^0.12.4"
-    }
+  "name": "aerect-discordbot",
+  "version": "0.5.2",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.7.0",
+    "@iamtraction/google-translate": "^1.1.2",
+    "discord-backup": "^3.0.1",
+    "discord-player": "^5.2.2",
+    "discord.js": "^13.6.0",
+    "express": "^4.17.3",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-static": "^4.4.1",
+    "glob": "^7.2.0",
+    "got": "^11.6.2",
+    "mongoose": "^6.2.3",
+    "node-fetch": "^2.6.1",
+    "util": "^0.12.4"
+  },
+  "devDependencies": {
+    "node": "^16.13.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aerectdev/aerect-discordbot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aerectdev/aerect-discordbot/issues"
+  },
+  "homepage": "https://github.com/aerectdev/aerect-discordbot#readme",
+  "description": ""
 }
