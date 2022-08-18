@@ -1,6 +1,6 @@
-const client = require("../index");
+const client = require('../index');
 
-client.on("ready", () => {
-    console.log(`[^] | ${client.user.tag} Launched at ${new Date().toLocaleTimeString()}`);
-    client.user.setPresence({ activities: [{ name: '!help | aerect.ml' }]});
+client.on('ready', async() => {
+  client.user.setActivity('Threads | /help', { type: 'WATCHING' });
+  client.user.setStatus('dnd');
 });

@@ -1,14 +1,16 @@
 const client = require("../index");
+const db = require("quick.db");
 
 client.on("messageCreate", async (message) => {
-  if (
-    message.author.bot ||
-    !message.guild ||
-    !message.content.toLowerCase().startsWith(client.config.prefix)
-  ) return;
+  if(!message.guild) return;
+const prefix = db.get(`prefix_${message.guild.id}`) || client.config.prefix;
+  
+  if (message.author.bot || !message.guild || !message.content.toLowerCase().startsWith(prefix)) return;
+
+  if(!message.channel.permissionsFor(message.guild.me) || !message.channel.permissionsFor(message.guild.me).has("SEND_MESSAGES")) return;
 
   const [cmd, ...args] = message.content
-    .slice(client.config.prefix.length)
+    .slice(prefix.length)
     .trim()
     .split(/ +/g);
 
@@ -18,6 +20,7 @@ client.on("messageCreate", async (message) => {
   try {
     await command.run(client, message, args);
   } catch (error) {
+    console.log(error);
     return message.reply(`${client.config.error} | There was an error while parsing the command request. Try again after a few minutes.`);
   }
 });
